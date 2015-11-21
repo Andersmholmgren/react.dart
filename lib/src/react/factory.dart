@@ -55,7 +55,7 @@ ComponentFactory registerComponent(Component factory()) {
       componentDidUpdate: allowInteropCaptureThis(
           (internal.Component jsComponent, internal.Props jsPrevProps, jsPrevState, jsPrevContext) {
         // Clean up the prop keys
-        var prevProps = componentProps.remove(jsPrevProps.propKey__);
+        var prevProps = componentProps[jsPrevProps.propKey__];
         var component = components[jsComponent];
         component.componentDidUpdate(prevProps, component._prevState);
       }),
