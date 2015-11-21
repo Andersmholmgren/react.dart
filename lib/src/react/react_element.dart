@@ -17,8 +17,8 @@ class Props {
 }
 
 Props _props({String className, bool disabled, String value,
-    void onClick(EventHandler<SyntheticMouseEvent> event),
-    void onChange(EventHandler<SyntheticEvent> event)}) {
+    EventHandler<SyntheticMouseEvent> onClick,
+    EventHandler<SyntheticEvent> onChange}) {
   return new Props(className: className, disabled: disabled, value: value,
       onClick: _wrapEventHandler(onClick),
       onChange: allowInterop(onChange));
